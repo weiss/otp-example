@@ -1,0 +1,5 @@
+/apps/*/ebin/*.beam
+/rel/bin/
+/rel/erts-*/
+/rel/lib/
+/rel/releases/

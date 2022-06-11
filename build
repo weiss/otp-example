@@ -1,0 +1,10 @@
+#!/usr/bin/env escript
+
+-define(RELTOOL_CONFIG, "reltool.config").
+-define(RELEASE_DIR, "rel").
+
+main(_Args) ->
+    up_to_date = make:all(),
+    {ok, Conf} = file:consult(?RELTOOL_CONFIG),
+    {ok, Spec} = reltool:get_target_spec(Conf),
+    ok = reltool:eval_target_spec(Spec, code:root_dir(), ?RELEASE_DIR).
